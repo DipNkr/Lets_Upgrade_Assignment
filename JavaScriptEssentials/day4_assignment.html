@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Day 4 Assignment</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .sec {
+      height: 100%;
+      width: 100%;
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .div {
+      height: 300px;
+      width: 100%;
+      background-color: chartreuse;
+    }
+  </style>
+  <body>
+    <section class="sec">
+      <div id="div" class="div"></div>
+      <div>
+        <button onclick="colourChange()">Button 1</button>
+        <button onclick="sizeChange()">Button 2</button>
+        <button onclick="addImage()">Button 3</button>
+        <button onclick="removeImage()">Button 4</button>
+      </div>
+    </section>
+    <script>
+      function colourChange() {
+        document.querySelector(".div").style.backgroundColor = "red";
+      }
+      function sizeChange() {
+        document.querySelector(".div").style.hight = "100px";
+        document.querySelector(".div").style.width = "100px";
+      }
+      function addImage() {
+        let elem = document.createElement("img");
+        elem.src = "https://miro.medium.com/max/1400/0*uJW7ltZfT_DKTXWD";
+        document.querySelector(".div").appendChild(elem);
+      }
+      function removeImage() {
+        let div = document.getElementById("div");
+        div.parentNode.removeChild(div);
+      }
+    </script>
+  </body>
+</html>
